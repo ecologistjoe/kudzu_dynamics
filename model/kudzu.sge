@@ -1,0 +1,8 @@
+#$ -N Kudzu
+#$ -cwd
+#$ -q medium*
+#$ -t 1-5020
+#$ -e ./gridout/$JOB_NAME.$JOB_ID.e.$TASK_ID
+#$ -o /dev/null
+matlab -r "bestPulses2d($SGE_TASK_ID); exit" -nodisplay
+
